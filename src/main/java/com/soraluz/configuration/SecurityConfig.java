@@ -26,7 +26,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests()
                 .requestMatchers("/auth/login",
                         "/auth/registrar",
-                        "/auth/guardarUsuario",
+                        "/auth/registrarUsuario",
                         "/resources/**",
                         "/styles/**",
                         "/scripts/**")
@@ -35,7 +35,7 @@ public class SecurityConfig {
                 .authenticated()
                 .and()
                 .formLogin().loginPage("/auth/login")
-                .defaultSuccessUrl("/home")
+                .defaultSuccessUrl("/Alumno/frmMantAlumno")
                 .usernameParameter("nomusuario")
                 .passwordParameter("password")
                 .and()

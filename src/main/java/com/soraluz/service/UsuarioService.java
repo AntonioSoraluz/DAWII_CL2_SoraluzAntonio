@@ -31,6 +31,10 @@ public class UsuarioService {
         return usuarioRepository.findByNomusuario(nomUsuario);
     }
     public Usuario guardarUsuario(Usuario usuario){
+    	usuario.setNombres(usuario.getNombres());
+    	usuario.setApellidos(usuario.getApellidos());
+    	usuario.setNomusuario(usuario.getNomusuario());
+    	usuario.setEmail(usuario.getEmail());
         usuario.setPassword(bCryptPasswordEncoder
                 .encode(usuario.getPassword()));
         usuario.setActivo(true);
